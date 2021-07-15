@@ -19,7 +19,7 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
-    var addMeetingForm = AddMeetingForm()
+    private var addMeetingForm = AddMeetingForm()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
