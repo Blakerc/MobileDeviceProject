@@ -2,11 +2,8 @@ package com.it3048.mobiledeviceproject
 
 import android.content.DialogInterface
 import android.os.Bundle
-import android.view.ContextThemeWrapper
-import android.view.LayoutInflater
+import android.view.*
 import android.widget.*
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.LinearLayout
@@ -27,12 +24,12 @@ class MainActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     lateinit var meetingList:ArrayList<MeetingDAO>
     lateinit var meetingAdapter: MeetingAdapter
-    val inflater = LayoutInflater.from(this)
-    val v = inflater.inflate(R.layout.meeting_card, null)
-    val meetingTitle = v.findViewById<TextView>(R.id.meetingNameTxt)
-    val meetingDate = v.findViewById<TextView>(R.id.meetingDateTxt)
-    val meetingDescription = v.findViewById<TextView>(R.id.meetingDescriptionTxt)
-    val meetingLink = v.findViewById<TextView>(R.id.meetingUrlTxt)
+    private val inflater = LayoutInflater.from(this)
+    private val v: View = inflater.inflate(R.layout.meeting_card, null)
+    private val meetingTitle: TextView = v.findViewById<TextView>(R.id.meetingNameTxt)
+    private val meetingDate: TextView = v.findViewById<TextView>(R.id.meetingDateTxt)
+    private val meetingDescription: TextView = v.findViewById<TextView>(R.id.meetingDescriptionTxt)
+    private val meetingLink: TextView = v.findViewById<TextView>(R.id.meetingUrlTxt)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         val date = meetingDate.text.toString()
         val description = meetingDescription.text.toString()
         val link = meetingLink.text.toString()
-        meetingList.add(MeetingDAO("$title", "$date", "$description", "Location: $link"))
+        meetingList.add(MeetingDAO(title, date, description, "Location: $link"))
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { addMeetingForm.show(supportFragmentManager, "addForm") }
 
