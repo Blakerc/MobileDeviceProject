@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
         /** Set up list */
-        meetingList = ArrayList<Meeting>()
+        meetingList = ArrayList()
         recyclerView = findViewById(R.id.eventsList)
         meetingAdapter = MeetingAdapter(this, meetingList)
         recyclerView.adapter = meetingAdapter
