@@ -25,12 +25,12 @@
             android:layout_gravity="bottom|end"
             android:layout_marginTop="550dp"
             android:backgroundTint="?attr/colorPrimary"
-            app:srcCompat="@drawable/ic_baseline_add_24"
+            android:contentDescription="@string/addMeeting"
             app:layout_constraintHorizontal_bias="0.923"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            />
+            app:srcCompat="@drawable/ic_baseline_add_24" />
 
         <CalendarView
             android:id="@+id/calendarView"
@@ -65,6 +65,7 @@
             android:layout_marginTop="57dp"
             android:layout_marginEnd="178dp"
             android:layout_marginRight="178dp"
+            android:contentDescription="@string/swapView"
             app:layout_constraintBottom_toTopOf="@+id/calendarView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

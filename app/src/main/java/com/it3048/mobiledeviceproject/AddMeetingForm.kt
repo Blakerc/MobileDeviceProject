@@ -1,12 +1,11 @@
 package com.it3048.mobiledeviceproject
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.it3048.mobiledeviceproject.databinding.AddMeetingFormBinding
 import kotlinx.android.synthetic.main.add_meeting_form.view.*
 
 import com.it3048.mobiledeviceproject.dto.Meeting
@@ -14,22 +13,26 @@ import com.it3048.mobiledeviceproject.dto.Meeting
 class AddMeetingForm: DialogFragment() {
 
     private var meeting = Meeting()
+    private var _binding: AddMeetingFormBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding = AddMeetingFormBinding.inflate(inflater, container, false)
+        val view = binding.root
         // Inflate the layout for this fragment
-       var rootView: View = inflater.inflate(R.layout.add_meeting_form, container, false)
 
-        rootView.cancelButton.setOnClickListener{
+        view.cancelButton.setOnClickListener{
             dismiss()
-            clearFields(rootView)
+            clearFields(view)
         }
 
 
 
-        rootView.submitButton.setOnClickListener{
+
+        view.submitButton.setOnClickListener{
             //this is where the inputs get saved to state
 //            var meetingTitle = rootView.editTextMeetingTitle.text.toString()
 //            var meetingColor = rootView.meetingColor.selectedItem.toString()
@@ -44,31 +47,31 @@ class AddMeetingForm: DialogFragment() {
 //            Log.i(meetingDescription, "meetingDescription")
 //            Log.i(meetingLocLink, "meetingLocLink")
 
-            submitMeeting(rootView);
+            submitMeeting(view);
             dismiss()
-            clearFields(rootView)
+            clearFields(view)
         }
 
 
 
-        return rootView
+        return view
     }
     // clear the fields in the new meeting form
-    private fun clearFields(rootView: View) {
-        rootView.editTextMeetingTitle.setText("")
-        rootView.meetingColor.selectedItem.toString()
-        rootView.meetingDate.setText("")
-        rootView.editTextDescripton.setText("")
-        rootView.editTextLocLink.setText("")
+    private fun clearFields(view: View) {
+        view.editTextMeetingTitle.setText("")
+        view.meetingColor.selectedItem.toString()
+        view.meetingDate.setText("")
+        view.editTextDescripton.setText("")
+        view.editTextLocLink.setText("")
     }
 
-    private fun submitMeeting(rootView: View) {
+    private fun submitMeeting(view: View) {
         meeting.apply {
-            meetingTitle = rootView.editTextMeetingTitle.text.toString()
-            meetingColor = rootView.meetingColor.selectedItem.toString()
-            meetingDate = rootView.meetingDate.text.toString()
-            meetingDescription = rootView.editTextDescripton.text.toString()
-            meetingLocLink = rootView.editTextLocLink.text.toString()
+            meetingTitle = view.editTextMeetingTitle.text.toString()
+            meetingColor = view.meetingColor.selectedItem.toString()
+            meetingDate = view.meetingDate.text.toString()
+            meetingDescription = view.editTextDescripton.text.toString()
+            meetingLocLink = view.editTextLocLink.text.toString()
         }
     }
 }

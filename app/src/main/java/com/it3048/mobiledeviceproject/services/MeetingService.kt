@@ -13,8 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.withContext
 
-class MeetingService(application: Application) {
-    private val application = application
+class MeetingService(private val application: Application) {
 
     internal fun save(meeting: Meeting) {
         getLocalMeetingDAO().save(meeting)
@@ -61,9 +60,9 @@ class MeetingService(application: Application) {
 
     }
 
-    internal fun getLocalMeetingDAO() : MeetingDAO {
-        val db = Room.databaseBuilder(application, MeetingDatabase::class.java, "MobileMeetings").build()
-        val localMeetingDAO = db.localMeetingDAO()
-        return localMeetingDAO
+    private fun getLocalMeetingDAO(): MeetingDAO {
+        val db =
+            Room.databaseBuilder(application, MeetingDatabase::class.java, "MobileMeetings").build()
+        return db.localMeetingDAO()
     }
 }
