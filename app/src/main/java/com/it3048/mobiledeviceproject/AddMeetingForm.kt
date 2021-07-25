@@ -20,7 +20,7 @@ class AddMeetingForm: DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-       var rootView: View = inflater.inflate(R.layout.add_meeting_form, container, false)
+           var rootView: View = inflater.inflate(R.layout.add_meeting_form, container, false)
 
         rootView.cancelButton.setOnClickListener{
             dismiss()
