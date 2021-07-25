@@ -1,28 +1,22 @@
 package com.it3048.mobiledeviceproject
 
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.*
 import android.widget.*
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.LinearLayout
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
+import com.it3048.mobiledeviceproject.dto.Meeting
 import kotlin.collections.ArrayList
+import kotlin.random.Random
+import kotlin.random.Random.Default.nextInt
 
 
 class MainActivity : AppCompatActivity() {
 
     private var addMeetingForm = AddMeetingForm()
     lateinit var recyclerView: RecyclerView
-    lateinit var meetingList:ArrayList<MeetingDAO>
+    lateinit var meetingList: ArrayList<Meeting>
     lateinit var meetingAdapter: MeetingAdapter
     private val inflater = LayoutInflater.from(this)
     private val v: View = inflater.inflate(R.layout.meeting_card, null)
@@ -38,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
         /** Set up list */
-        meetingList = ArrayList()
+        meetingList = ArrayList<Meeting>()
         recyclerView = findViewById(R.id.eventsList)
         meetingAdapter = MeetingAdapter(this, meetingList)
         recyclerView.adapter = meetingAdapter
@@ -46,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         val date = meetingDate.text.toString()
         val description = meetingDescription.text.toString()
         val link = meetingLink.text.toString()
-        meetingList.add(MeetingDAO(title, date, description, "Location: $link"))
+        meetingList.add(Meeting(0, title, date, description, "Location: $link"))
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { addMeetingForm.show(supportFragmentManager, "addForm") }
 
