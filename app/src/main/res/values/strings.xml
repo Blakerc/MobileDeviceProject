@@ -9,6 +9,17 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="addMeeting">Add A Meeting Button</string>
+    <string name="swapView">Swap View Button</string>
+    <string name="cancel">Cancel</string>
+    <string name="descriptionHint">Description</string>
+    <string name="title">Meeting Title</string>
+    <string name="date">--/--/--- --:--</string>
+    <string name="meeting">New Meeting</string>
+    <string name="link">Location/Link</string>
+    <string name="submit">Submit</string>
+    <string name="close">Close</string>
+    <string name="edit">Edit</string>
     <string-array name="colors">
         <item>red</item>
         <item>green</item>
