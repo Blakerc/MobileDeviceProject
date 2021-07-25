@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitInstance {
     private var retrofit: Retrofit? = null
     private val BASE_URL = "PLACEHOLDER"
-    //TODO: Replace this^
+    /**TODO: Replace this^ */
     val retrofitInstance: Retrofit?
         get() {
             if (retrofit == null) {
