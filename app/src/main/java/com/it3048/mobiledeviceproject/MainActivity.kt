@@ -15,9 +15,9 @@ import kotlin.random.Random.Default.nextInt
 class MainActivity : AppCompatActivity() {
 
     private var addMeetingForm = AddMeetingForm()
-    lateinit var recyclerView: RecyclerView
-    lateinit var meetingList: ArrayList<Meeting>
-    lateinit var meetingAdapter: MeetingAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var meetingList: ArrayList<Meeting>
+    private lateinit var meetingAdapter: MeetingAdapter
     private val inflater = LayoutInflater.from(this)
     private val v: View = inflater.inflate(R.layout.meeting_card, null)
     private val meetingTitle: TextView = v.findViewById<TextView>(R.id.meetingNameTxt)
