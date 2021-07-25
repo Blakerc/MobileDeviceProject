@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.it3048.mobiledeviceproject.dto.Meeting
 import kotlin.collections.ArrayList
-import kotlin.random.Random
-import kotlin.random.Random.Default.nextInt
 
 
 class MainActivity : AppCompatActivity() {
