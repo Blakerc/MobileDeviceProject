@@ -63,6 +63,7 @@ class AddMeetingForm: DialogFragment() {
     }
 
     private fun submitMeeting(rootView: View) {
+
         meeting.apply {
             meetingTitle = rootView.editTextMeetingTitle.text.toString()
             meetingColor = rootView.meetingColor.selectedItem.toString()

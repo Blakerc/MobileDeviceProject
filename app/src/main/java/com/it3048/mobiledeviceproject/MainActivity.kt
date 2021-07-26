@@ -1,41 +1,35 @@
 package com.it3048.mobiledeviceproject
 
-import android.content.DialogInterface
 import android.os.Bundle
-import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.widget.*
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.LinearLayout
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
 import kotlin.collections.ArrayList
 
 
 class MainActivity : AppCompatActivity() {
 
     private var addMeetingForm = AddMeetingForm()
-    lateinit var recyclerView: RecyclerView
+
+    private lateinit var recyclerView: RecyclerView
     lateinit var meetingList:ArrayList<MeetingDAO>
     lateinit var meetingAdapter: MeetingAdapter
-    val inflater = LayoutInflater.from(this)
-    val v = inflater.inflate(R.layout.meeting_card, null)
-    val meetingTitle = v.findViewById<TextView>(R.id.meetingNameTxt)
-    val meetingDate = v.findViewById<TextView>(R.id.meetingDateTxt)
-    val meetingDescription = v.findViewById<TextView>(R.id.meetingDescriptionTxt)
-    val meetingLink = v.findViewById<TextView>(R.id.meetingUrlTxt)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
+        val inflater = LayoutInflater.from(this)
+        val v = inflater.inflate(R.layout.meeting_card, null)
+        val meetingTitle = v.findViewById<TextView>(R.id.meetingNameTxt)
+        val meetingDate = v.findViewById<TextView>(R.id.meetingDateTxt)
+        val meetingDescription = v.findViewById<TextView>(R.id.meetingDescriptionTxt)
+        val meetingLink = v.findViewById<TextView>(R.id.meetingUrlTxt)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
