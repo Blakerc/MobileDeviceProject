@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.it3048.mobiledeviceproject.dto.Meeting
 
 class MeetingAdapter(val c:Context, val meetingList:ArrayList<MeetingDAO>):RecyclerView.Adapter<MeetingAdapter.meetingViewHolder>() {
     inner class MeetingViewHolder(val v:View):RecyclerView.ViewHolder(v){
