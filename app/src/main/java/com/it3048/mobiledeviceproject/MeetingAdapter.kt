@@ -8,12 +8,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.it3048.mobiledeviceproject.dto.Meeting
 
-class MeetingAdapter(val c:Context, val meetingList: ArrayList<Meeting>):RecyclerView.Adapter<MeetingAdapter.MeetingViewHolder>() {
-    inner class MeetingViewHolder(v:View):RecyclerView.ViewHolder(v){
-        val title: TextView = v.findViewById<TextView>(R.id.meetingNameTxt)
-        val date: TextView = v.findViewById<TextView>(R.id.meetingDateTxt)
-        val description: TextView = v.findViewById<TextView>(R.id.meetingDescriptionTxt)
-        val link: TextView = v.findViewById<TextView>(R.id.meetingUrlTxt)
+class MeetingAdapter(val c:Context, val meetingList:ArrayList<MeetingDAO>):RecyclerView.Adapter<MeetingAdapter.meetingViewHolder>() {
+    inner class MeetingViewHolder(val v:View):RecyclerView.ViewHolder(v){
+        val title = v.findViewById<TextView>(R.id.meetingNameTxt)
+        val date = v.findViewById<TextView>(R.id.meetingDateTxt)
+        val description = v.findViewById<TextView>(R.id.meetingDescriptionTxt)
+        val link = v.findViewById<TextView>(R.id.meetingUrlTxt)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MeetingViewHolder {
