@@ -30,19 +30,6 @@ class AddMeetingForm: DialogFragment() {
 
 
         rootView.submitButton.setOnClickListener{
-            //this is where the inputs get saved to state
-//            var meetingTitle = rootView.editTextMeetingTitle.text.toString()
-//            var meetingColor = rootView.meetingColor.selectedItem.toString()
-//            var meetingDate = rootView.meetingDate.text.toString()
-//            var meetingDescription = rootView.editTextDescripton.text.toString()
-//            var meetingLocLink = rootView.editTextLocLink.text.toString()
-//
-//            Toast.makeText(context, "submitted", Toast.LENGTH_LONG).show()
-//            Log.i(meetingTitle, "meetingTitle")
-//            Log.i(meetingColor, "meetingColor")
-//            Log.i(meetingDate, "meetingDate")
-//            Log.i(meetingDescription, "meetingDescription")
-//            Log.i(meetingLocLink, "meetingLocLink")
 
             submitMeeting(rootView);
             dismiss()
