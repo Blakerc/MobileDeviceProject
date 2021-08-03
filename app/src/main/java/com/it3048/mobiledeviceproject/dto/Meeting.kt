@@ -15,12 +15,12 @@ import androidx.room.ColumnInfo
 @Entity(tableName = "meetings")
 data class Meeting (
     @PrimaryKey var meetingCode: Int = 0,
+    @ColumnInfo(name = "userCode") var userCode: String = "",
     @ColumnInfo(name = "meetingTitle") var meetingTitle: String = "",
+    @ColumnInfo(name = "meetingColor") var meetingColor: String = "",
     @ColumnInfo(name = "meetingDate") var meetingDate: String = "",
     @ColumnInfo(name = "meetingDescription") var meetingDescription: String = "",
-    @ColumnInfo(name = "meetingLocLink") var meetingLocLink: String = "",
-    @ColumnInfo(name = "userCode") var userCode: String = "",
-    @ColumnInfo(name = "meetingColor") var meetingColor: String = "") {
+    @ColumnInfo(name = "meetingLocLink") var meetingLocLink: String = "") {
     override fun toString(): String {
         return "$meetingTitle $meetingDate"
     }
