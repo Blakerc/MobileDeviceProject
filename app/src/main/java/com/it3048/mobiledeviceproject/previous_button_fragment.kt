@@ -18,13 +18,15 @@ class SecondFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false)
+        return inflater.inflate(R.layout.previous_button_fragment.xml, container, false)
     }
+// line 21: fragment_second.xml -> a little confusing as to what this fragment is.
+//the xml file has a button labeled "Previous" on it. I rename the name of this fragment, and the xml file to "previous_button_fragment.
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.button_second).setOnClickListener {
+        view.findViewById<Button>(R.id.edtPrevious).setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
     }

@@ -19,7 +19,7 @@
         android:id="@+id/SecondFragment"
         android:name="com.it3048.mobiledeviceproject.SecondFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/previous_button_fragment">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
