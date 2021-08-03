@@ -30,6 +30,7 @@ class AddMeetingForm: DialogFragment() {
 
 
         rootView.submitButton.setOnClickListener{
+
             submitMeeting(rootView);
             dismiss()
             clearFields(rootView)
