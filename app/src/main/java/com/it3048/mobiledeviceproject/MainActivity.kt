@@ -23,27 +23,25 @@ import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
-    private var addMeetingForm = AddMeetingForm()
-    lateinit var recyclerView: RecyclerView
-    lateinit var meetingList:ArrayList<MeetingDAO>
-    lateinit var meetingAdapter: MeetingAdapter
-    val inflater = LayoutInflater.from(this)
-    val v = inflater.inflate(R.layout.meeting_card, null)
-    val meetingTitle = v.findViewById<TextView>(R.id.meetingNameTxt)
-    val meetingDate = v.findViewById<TextView>(R.id.meetingDateTxt)
-    val meetingDescription = v.findViewById<TextView>(R.id.meetingDescriptionTxt)
-    val meetingLink = v.findViewById<TextView>(R.id.meetingUrlTxt)
-
+    //This didn't work because it is trying to initiate stuff before the onCreate, however it works now for some reason
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
+        var addMeetingForm = AddMeetingForm()
+        val inflater = LayoutInflater.from(this)
+        val v = inflater.inflate(R.layout.meeting_card, null)
+        val meetingTitle = v.findViewById<TextView>(R.id.meetingNameTxt)
+        val meetingDate = v.findViewById<TextView>(R.id.meetingDateTxt)
+        val meetingDescription = v.findViewById<TextView>(R.id.meetingDescriptionTxt)
+        val meetingLink = v.findViewById<TextView>(R.id.meetingUrlTxt)
+
         /** Set up list */
-        meetingList = ArrayList()
-        recyclerView = findViewById(R.id.eventsList)
-        meetingAdapter = MeetingAdapter(this, meetingList)
+        var meetingList:ArrayList<MeetingDAO> = ArrayList()
+        var recyclerView: RecyclerView = findViewById(R.id.eventsList)
+        var meetingAdapter: MeetingAdapter = MeetingAdapter(this, meetingList)
         recyclerView.adapter = meetingAdapter
         val title = meetingTitle.text.toString()
         val date = meetingDate.text.toString()
