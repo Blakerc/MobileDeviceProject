@@ -3,7 +3,6 @@ package com.it3048.mobiledeviceproject
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.ContextThemeWrapper
-import android.view.LayoutInflater
 import android.widget.*
 import android.view.Menu
 import android.view.MenuItem
@@ -13,17 +12,16 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class MainActivity : AppCompatActivity() {
 
     //This didn't work because it is trying to initiate stuff before the onCreate, however it works now for some reason
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         meetingList.add(MeetingDAO("$title", "$date", "$description", "Location: $link"))
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { addMeetingForm.show(supportFragmentManager, "addForm") }
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
