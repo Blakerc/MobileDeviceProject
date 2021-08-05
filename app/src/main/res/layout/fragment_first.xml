@@ -25,5 +25,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CurrentDate" />
+        app:layout_constraintTop_toBottomOf="@+id/CurrentDate"
+        tools:listitem="@layout/meeting_card" />
 </androidx.constraintlayout.widget.ConstraintLayout>
