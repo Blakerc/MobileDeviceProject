@@ -19,3 +19,5 @@ interface MeetingDAO {
     @Insert
     fun save(meeting: Meeting)
 }
+
+//This is unused, as we are now using a room database
