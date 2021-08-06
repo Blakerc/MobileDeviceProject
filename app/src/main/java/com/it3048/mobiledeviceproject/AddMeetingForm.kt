@@ -19,8 +19,8 @@ class AddMeetingForm: DialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-       var rootView: View = inflater.inflate(R.layout.add_meeting_form, container, false)
+        /** Inflate the layout for this fragment */
+           var rootView: View = inflater.inflate(R.layout.add_meeting_form, container, false)
 
         rootView.cancelButton.setOnClickListener{
             dismiss()
@@ -30,20 +30,20 @@ class AddMeetingForm: DialogFragment() {
 
 
         rootView.submitButton.setOnClickListener{
-            //this is where the inputs get saved to state
-//            var meetingTitle = rootView.editTextMeetingTitle.text.toString()
-//            var meetingColor = rootView.meetingColor.selectedItem.toString()
-//            var meetingDate = rootView.meetingDate.text.toString()
-//            var meetingDescription = rootView.editTextDescripton.text.toString()
-//            var meetingLocLink = rootView.editTextLocLink.text.toString()
-//
-//            Toast.makeText(context, "submitted", Toast.LENGTH_LONG).show()
-//            Log.i(meetingTitle, "meetingTitle")
-//            Log.i(meetingColor, "meetingColor")
-//            Log.i(meetingDate, "meetingDate")
-//            Log.i(meetingDescription, "meetingDescription")
-//            Log.i(meetingLocLink, "meetingLocLink")
+            /**this is where the inputs get saved to state
+            var meetingTitle = rootView.editTextMeetingTitle.text.toString()
+            var meetingColor = rootView.meetingColor.selectedItem.toString()
+            var meetingDate = rootView.meetingDate.text.toString()
+            var meetingDescription = rootView.editTextDescripton.text.toString()
+            var meetingLocLink = rootView.editTextLocLink.text.toString()
 
+            Toast.makeText(context, "submitted", Toast.LENGTH_LONG).show()
+            Log.i(meetingTitle, "meetingTitle")
+            Log.i(meetingColor, "meetingColor")
+            Log.i(meetingDate, "meetingDate")
+            Log.i(meetingDescription, "meetingDescription")
+            Log.i(meetingLocLink, "meetingLocLink")
+ */
             submitMeeting(rootView);
             dismiss()
             clearFields(rootView)
@@ -53,7 +53,7 @@ class AddMeetingForm: DialogFragment() {
 
         return rootView
     }
-    // clear the fields in the new meeting form
+    /** clear the fields in the new meeting form */
     private fun clearFields(rootView: View) {
         rootView.editTextMeetingTitle.setText("")
         rootView.meetingColor.selectedItem.toString()

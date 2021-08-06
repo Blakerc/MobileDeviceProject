@@ -9,4 +9,5 @@ import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.add_meeting_form.view.*
 
 class MeetingDetailsForm: DialogFragment() {
+  /**TO DO Develop Duncitonality for this class
 }

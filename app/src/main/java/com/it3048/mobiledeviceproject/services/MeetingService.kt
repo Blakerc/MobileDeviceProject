@@ -24,7 +24,7 @@ class MeetingService(application: Application) {
         withContext(Dispatchers.IO) {
             val service = RetrofitInstance.retrofitInstance?.create(MeetingDAO::class.java)
             val meetings = async {service?.getAll(userCode = "PLACEHOLDER")}
-            //TODO: pass userCode^
+            /**TODO: pass userCode^*/
 
             updateALLMeetings(meetings.await())
         }
@@ -34,7 +34,7 @@ class MeetingService(application: Application) {
         try {
             var localMeetingDAO = getLocalMeetingDAO()
             localMeetingDAO.getAll(userCode = "PLACEHOLDER")
-            //TODO: pass userCode^
+            /**TODO: pass userCode^*/
         }catch (e: Exception) {
             e.message?.let { Log.e(ContentValues.TAG, it) }
         }
@@ -45,7 +45,7 @@ class MeetingService(application: Application) {
         withContext(Dispatchers.IO) {
             val service = RetrofitInstance.retrofitInstance?.create(MeetingDAO::class.java)
             val meeting = async {service?.getMeetingDetails(meetingCode = "PLACEHOLDER")}
-            //TODO: pass meetingCode^
+            /**TODO: pass meetingCode^*/
 
             updateMeetingDetails(meeting.await())
         }
